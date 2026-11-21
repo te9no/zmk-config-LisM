@@ -1,0 +1,2 @@
+#include "../../tests/renode/uart.overlay"
+#include "../../tests/renode/wired.dtsi"

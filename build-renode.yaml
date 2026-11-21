@@ -1,0 +1,9 @@
+include:
+  - board: xiao_ble//zmk
+    shield: lism_left
+    snippet: lism-zs-left lism-sim-left
+    artifact-name: LisM-ZeroShift-sim-left
+  - board: xiao_ble//zmk
+    shield: lism_right
+    snippet: lism-zs-right lism-sim-right
+    artifact-name: LisM-ZeroShift-sim-right

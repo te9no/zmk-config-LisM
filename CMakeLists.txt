@@ -64,3 +64,7 @@ if(CONFIG_ZMK_ZEROSHIFT AND CONFIG_ZMK_SPLIT_ROLE_CENTRAL AND CONFIG_ZMK_INPUT_S
   endfunction()
   cmake_language(DEFER DIRECTORY "${APPLICATION_SOURCE_DIR}" CALL patch_split_input_discovery)
 endif()
+
+if(SNIPPET MATCHES "lism-sim-right")
+  target_sources(app PRIVATE tests/renode/uart_endpoint.c)
+endif()

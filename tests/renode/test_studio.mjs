@@ -18,7 +18,7 @@ async function reset(side) {
   await delay(1800);
 }
 
-const modes = ["off", "encoder", "fourway", "paw3222"];
+const modes = [0, 1, 2, 3];
 async function read(side) {
   for (let attempt = 0; ; attempt++) {
     try { return await client.profile(side); }
@@ -31,14 +31,14 @@ async function read(side) {
 function check(state, side, saved, active) {
   assert.equal(state.model, "LisM");
   assert.equal(state.side, side);
-  assert.deepEqual(state.supported.lower, modes);
-  assert.equal(state.lower, saved);
-  assert.equal(state.activeLower, active);
+  assert.deepEqual(state.slots[0].modes.map(([id]) => id), modes);
+  assert.equal(state.slots[0].saved, saved);
+  assert.equal(state.slots[0].active, active);
 }
 try {
   await delay(1200);
-  check(await read(), "right", "off", "off");
-  const active = {left: "off", right: "off"};
+  check(await read(), "right", 0, 0);
+  const active = {left: 0, right: 0};
   for (const left of modes) {
     for (const right of modes) {
       for (const [side, next] of [["left", left], ["right", right]]) {

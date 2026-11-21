@@ -2,9 +2,11 @@
 
 LisM の左右にある拡張ソケットを Web UI から設定できます。各側でオフ、押し込み付きエンコーダ、4方向スティック、トラックボール（PAW3222）を選べます。初期設定は左右ともオフです。
 
+左右間の無線接続で、親機がスキャンを開始できない場合や子機が広告を開始できない場合は、1・2・4・8・16秒の間隔で最大5回再試行します。スリープ中は再試行を休止します。
+
 ## 書き込みとモジュール切替
 
-1. [左右の UF2 をダウンロード](firmware/downloads/LisM-ZeroShift-r01.zip)して展開します。左手には `LisM-ZeroShift-left.uf2`、右手には `LisM-ZeroShift-right.uf2` を書き込みます。
+1. [左右の UF2 をダウンロード](firmware/downloads/LisM-ZeroShift-recovery-r02.zip)して展開します。左手には `LisM-ZeroShift-left.uf2`、右手には `LisM-ZeroShift-right.uf2` を書き込みます。
 2. 両手の電源を入れ、親機の右手をデータ通信対応 USB ケーブルで端末に接続します。[ZeroShift Web UI](https://te9no.github.io/zmk-feature-zeroshift/) を開き、「USB 接続」を選びます。
 3. 「設定する側」で左側または右側を選び、「拡張ソケット」で装着するモジュールを選んで保存します。左側の設定には左右の接続が必要です。
 4. モジュールを交換するときは電源を切り、USB を外して交換します。設定した側を再起動し、Web UI で「起動中」の表示を確認します。

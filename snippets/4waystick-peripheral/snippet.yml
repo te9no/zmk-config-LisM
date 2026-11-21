@@ -1,3 +1,0 @@
-name: 4waystick-peripheral
-append:
-  EXTRA_DTC_OVERLAY_FILE: 4waystick.overlay

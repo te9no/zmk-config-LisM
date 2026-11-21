@@ -1,3 +1,3 @@
-#include "../trackball-peripheral/trackball.overlay"
-#include "../zeroshift.dtsi"
+#include "../../boards/shields/lism/trackball_left.dtsi"
+#include "../../boards/shields/lism/zeroshift.dtsi"
 &trackball_peripheral { zephyr,deferred-init; };

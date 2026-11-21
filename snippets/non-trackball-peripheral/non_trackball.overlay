@@ -1,5 +1,0 @@
-#include "../non_trackball.overlay"
-
-&trackball_split {
-    status = "disabled";
-};

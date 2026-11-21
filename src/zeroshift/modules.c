@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 #include <zephyr/drivers/kscan.h>
 #include <zephyr/drivers/sensor.h>
+#include <zephyr/pm/device.h>
 #include <zephyr/pm/device_runtime.h>
 #include <zmk/events/position_state_changed.h>
 #include <zmk/events/sensor_event.h>

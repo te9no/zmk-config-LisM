@@ -23,3 +23,8 @@ if SHIELD_LISM_L || SHIELD_LISM_R
     config SPI
         default y
 endif
+config ZMK_BT_RECOVERY
+    default y if ZMK_ZEROSHIFT && ZMK_SPLIT_BLE && !ZMK_SETTINGS_RESET_ON_START
+
+config ZMK_BT_RECOVERY_DIAGNOSTICS
+    default y if ZMK_BT_RECOVERY

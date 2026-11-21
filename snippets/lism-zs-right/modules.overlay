@@ -1,0 +1,3 @@
+#include "../trackball-central/trackball.overlay"
+#include "../zeroshift.dtsi"
+&trackball_central { zephyr,deferred-init; };

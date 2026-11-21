@@ -2,13 +2,18 @@ name: Build ZMK firmware
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ main, feat/zeroshift ]
     tags-ignore:
       - 'v*' # リリース用タグはrelease.yml側でビルドするので重複を避ける
     paths:
       - '.github/workflows/build.yml'
       - 'boards/**'
       - 'config/**'
+      - 'src/**'
+      - 'proto/**'
+      - 'dts/**'
+      - 'zephyr/**'
+      - 'CMakeLists.txt'
       - 'snippets/**'
       - 'build.yaml'
   pull_request:
@@ -16,6 +21,11 @@ on:
       - '.github/workflows/build.yml'
       - 'boards/**'
       - 'config/**'
+      - 'src/**'
+      - 'proto/**'
+      - 'dts/**'
+      - 'zephyr/**'
+      - 'CMakeLists.txt'
       - 'snippets/**'
       - 'build.yaml'
 

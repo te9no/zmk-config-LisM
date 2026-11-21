@@ -1,5 +1,7 @@
 name: zmk-config-LisM
 build:
+  cmake: .
   settings:
+    dts_root: .
     board_root: .
     snippet_root: .

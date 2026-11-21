@@ -1,0 +1,29 @@
+/* The main matrix is scanned normally. The selected module owns row 4. */
+&spi0 { zephyr,deferred-init; };
+&sensors { triggers-per-rotation = <12>; };
+/ {
+    module_encoder: module-encoder {
+        compatible = "lism,deferred-ec11", "alps,ec11";
+        zephyr,deferred-init;
+        a-gpios = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <12>;
+    };
+    encoder_push: encoder-push {
+        compatible = "zmk,kscan-gpio-matrix";
+        zephyr,deferred-init;
+        wakeup-source;
+        diode-direction = "col2row";
+        row-gpios = <&xiao_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        col-gpios = <&xiao_d 5 GPIO_ACTIVE_HIGH>;
+    };
+    four_way: four-way {
+        compatible = "zmk,kscan-gpio-direct";
+        zephyr,deferred-init;
+        wakeup-source;
+        input-gpios = <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+                      <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+                      <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+                      <&xiao_d 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
+};
